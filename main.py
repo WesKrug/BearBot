@@ -14,7 +14,6 @@ async def on_message(message):
         if (message.mentions):
             for pinged in message.mentions:
                 ooc_message = ooc_message.replace("<@!"+str(pinged.id)+">", "@"+pinged.nick)
-                print(ooc_message)
         await message.delete()
         await message.channel.send('```fix\n{0}: {1}```'.format(message.author.display_name, ooc_message))
     
